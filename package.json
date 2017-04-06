@@ -1,0 +1,19 @@
+{
+  "name": "crud-api",
+  "version": "1.0.0",
+  "description": "Following a tutorial, learn how to create a reastful api with nodejs and express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucasCW/CRUD-API.git"
+  },
+  "author": "Lucas Wang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LucasCW/CRUD-API/issues"
+  },
+  "homepage": "https://github.com/LucasCW/CRUD-API#readme"
+}
