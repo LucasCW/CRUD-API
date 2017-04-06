@@ -2,7 +2,7 @@
   "name": "crud-api",
   "version": "1.0.0",
   "description": "Following a tutorial, learn how to create a reastful api with nodejs and express",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/LucasCW/CRUD-API/issues"
   },
-  "homepage": "https://github.com/LucasCW/CRUD-API#readme"
+  "homepage": "https://github.com/LucasCW/CRUD-API#readme",
+  "dependencies": {
+    "express": "~4.0.0",
+    "mongoose": "~3.6.13",
+    "body-parser": "~1.0.1"
+  }
 }
