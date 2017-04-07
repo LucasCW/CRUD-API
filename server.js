@@ -12,6 +12,14 @@ var port = process.env.PORT || 8080;
 
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/bear');
+mongoose.set('debug', true);
+
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+	console.log('connected');
+});
 
 // Routes for our api
 var router = express.Router();
@@ -25,6 +33,27 @@ router.use(function(req, res, next) {
 
 router.get('/', function(req, res) {
 	res.json({ message: 'hooray! welcome to our api!' });
+});
+
+router.route('/bears').post(function(req, res) {
+	var bear = new Bear();
+	bear.name = req.body.name;
+	console.log(bear);
+	console.log(bear.save);
+	bear.save(function(err, bear) {
+		console.log('what the fuck');
+		if(err)
+			res.send(err);
+
+		res.json({message: 'Bear created'});
+	});
+}).get(function(req, res) {
+	Bear.find(function(err, bears) {
+		// console.log('what the fuck');
+		if(err)
+			res.send(err);
+		res.json(bears);
+	});
 });
 
 
